@@ -1,6 +1,6 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Greeting from './components/Greeting';
-import { Route, Routes } from "react-router-dom"
 import './App.css';
 
 const App = () => (

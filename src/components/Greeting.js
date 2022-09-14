@@ -1,16 +1,15 @@
-import React from "react";
+import React from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { getGreetingFromApi } from '../redux/greeting/greeting'
+import { getGreetingFromApi } from '../redux/greeting/greeting';
 
 const Greeting = () => {
   const listing = useSelector((state) => state.greetingReducer, shallowEqual);
 
-  const result = listing[(Math.random() * listing.length) | 0];
-  
+  const result = listing[(Math.random() * listing.length) | 0];// eslint-disable-line no-bitwise
+
   let text = '';
-  if(result) {
+  if (result) {
     text = result.text;
-    console.log(text);
   }
 
   const dispatch = useDispatch();
@@ -21,8 +20,8 @@ const Greeting = () => {
 
   return (
     <div>
-      <button onClick={showGreeting}>Get a greeting</button>
-      <br></br>
+      <button type="button" onClick={showGreeting}>Get a greeting</button>
+      <br />
       <h1>{text}</h1>
     </div>
   );
